@@ -78,14 +78,14 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('test', ['karma:development']);
-    grunt.registerTask('build',
+    grunt.registerTask('deploy',
         [
             'jshint',
-            'karma:development',
+            //'karma:development',
             'concat',
-            'karma:deploy',
-            'uglify',
-            'karma:minified'
+            //'karma:deploy',
+            //'uglify',
+            //'karma:minified'
         ]);
 
 };

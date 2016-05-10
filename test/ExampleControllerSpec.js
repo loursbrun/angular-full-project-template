@@ -1,5 +1,5 @@
 /**
- * Created by fabienbrun on 09/05/16.
+ * Test !!!!
  */
 describe('ExampleController', function() {
     var scope, controller, httpBackend;
