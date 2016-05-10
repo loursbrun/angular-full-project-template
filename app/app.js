@@ -1,10 +1,8 @@
-angular.module('AppController', [])
+
+var app = angular.module('app', []);
 
 
-
-
-
-    .controller('TodoListController', function() {
+app.controller('TodoListController', function() {
         var todoList = this;
         todoList.todos = [
             {text:'learn angular', done:true},
@@ -31,6 +29,9 @@ angular.module('AppController', [])
             });
         };
     });
+
+
+
 
 
 
