@@ -1,4 +1,4 @@
-angular.module('todoApp', [])
+angular.module('AppController', [])
     .controller('TodoListController', function() {
         var todoList = this;
         todoList.todos = [

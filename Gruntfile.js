@@ -41,6 +41,15 @@ module.exports = function (grunt) {
                     ],
                 }
             },
+            'vendors': {
+                'options': {
+                    'configFile': 'karma.conf.js',
+                    'files': [
+                        '<%= meta.jsFilesForTesting %>',
+                        'deploy/scripts/vendors.js'
+                    ],
+                }
+            },
             'minified': {
                 'options': {
                     'configFile': 'karma.conf.js',
@@ -60,10 +69,8 @@ module.exports = function (grunt) {
             'deploy': {
                 'src': ['app/**/*.js'],
                 'dest': 'deploy/scripts/app.js'
-            }
-        },
-        'concat': {
-            'deploy': {
+            },
+            'vendors': {
                 'src': ['bower_components/angular/angular.js'],
                 'dest': 'deploy/scripts/vendors.js'
             }
