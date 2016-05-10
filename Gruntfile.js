@@ -29,16 +29,16 @@ module.exports = function (grunt) {
                 'options': {
                     'files': [
                         '<%= meta.jsFilesForTesting %>',
-                        'source/**/*.js'
+                        'app/**/*.js'
                     ],
                 }
             },
-            'dist': {
+            'deploy': {
                 'options': {
                     'configFile': 'karma.conf.js',
                     'files': [
                         '<%= meta.jsFilesForTesting %>',
-                        'dist/<%= pkg.namelower %>-<%= pkg.version %>.js'
+                        'deploy/scripts/app.js'
                     ],
                 }
             },
@@ -47,20 +47,20 @@ module.exports = function (grunt) {
                     'configFile': 'karma.conf.js',
                     'files': [
                         '<%= meta.jsFilesForTesting %>',
-                        'dist/<%= pkg.namelower %>-<%= pkg.version %>.min.js'
+                        'deploy/scripts/app-min.js'
                     ],
                 }
             }
         },
 
         'jshint': {
-            'beforeconcat': ['source/**/*.js'],
+            'beforeconcat': ['app/**/*.js'],
         },
 
         'concat': {
-            'dist': {
-                'src': ['source/**/*.js'],
-                'dest': 'dist/<%= pkg.namelower %>-<%= pkg.version %>.js'
+            'deploy': {
+                'src': ['app/**/*.js'],
+                'dest': 'deploy/scripts/app.js'
             }
         },
 
@@ -68,9 +68,9 @@ module.exports = function (grunt) {
             'options': {
                 'mangle': false
             },
-            'dist': {
+            'deploy': {
                 'files': {
-                    'dist/<%= pkg.namelower %>-<%= pkg.version %>.min.js': ['dist/<%= pkg.namelower %>-<%= pkg.version %>.js']
+                    'deploy/scripts/app-min.js': ['deploy/scripts/app.js']
                 }
             }
         },
@@ -83,7 +83,7 @@ module.exports = function (grunt) {
             'jshint',
             'karma:development',
             'concat',
-            'karma:dist',
+            'karma:deploy',
             'uglify',
             'karma:minified'
         ]);

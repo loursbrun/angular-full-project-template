@@ -4,6 +4,8 @@
 describe('ExampleController', function() {
     var scope, controller, httpBackend;
 
+    console.log("Test lours");
+
     // Initialization of the AngularJS application before each test case
     beforeEach(module('ExampleApp'));
 
