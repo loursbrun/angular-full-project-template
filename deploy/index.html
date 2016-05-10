@@ -8,25 +8,31 @@
     <link rel="stylesheet" type="text/css" href="styles/app.css">
 </head>
 <body>
-<h2>Todo</h2>
-
-<div ng-controller="TodoListController as todoList">
-    <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-    [ <a href="" ng-click="todoList.archive()">archive</a> ]
-    <ul class="unstyled">
-        <li ng-repeat="todo in todoList.todos">
-            <label class="checkbox">
-                <input type="checkbox" ng-model="todo.done">
-                <span class="done-{{todo.done}}">{{todo.text}}</span>
-            </label>
-        </li>
-    </ul>
-    <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText" size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-    </form>
+<div ng-controller="myController">
+    <h1>rootScopeController</h1>
+    <p>rootScope: {{site}}</p>
+    <!--changes in site will be done on controller level(myController level) rootScope not global rootScope object-->
+    <p>rootScope(ng-model): <input type="text" ng-model="site"/></p>
+    <p>welcome from scope: {{welcome}}</p>
+    <p>welcome from scope(ng-model): <input type="text" ng-model="welcome"/></p>
+    <p>scope: {{name}}</p>
 </div>
+
+<div ng-controller="testController">
+    <h1>ScopeController</h1>
+    <p>rootScope: {{site}}</p>
+    <!--changes in site will be done on controller level(testController level) rootScope not global rootScope object-->
+    <p>rootScope(ng-model): <input type="text" ng-model="site"/></p>
+    <p>welcome from scope: {{welcome}}</p>
+    <p>name from rootScope: {{name}}</p>
+</div>
+
+<div>
+    <h1>Outside from both Controller</h1>
+    <p>name from rootScope: {{name}}</p>
+    <p>site from rootScope: {{site}}</p>
+</div>
+
 </body>
 
 </html>

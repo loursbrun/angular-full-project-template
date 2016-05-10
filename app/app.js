@@ -1,37 +1,25 @@
 
+//defining module
 var app = angular.module('app', []);
 
 
-app.controller('TodoListController', function() {
-        var todoList = this;
-        todoList.todos = [
-            {text:'learn angular', done:true},
-            {text:'build an angular app', done:false}];
 
-        todoList.addTodo = function() {
-            todoList.todos.push({text:todoList.todoText, done:false});
-            todoList.todoText = '';
-        };
+//the run function acts as a main method for the angular app.
+//the run function acts as a main method for the angular app.
+app.run(function ($rootScope) {
+    $rootScope.site = "interviewgully.com";
+    $rootScope.name = "Brajesh Kumar";
+    console.log('$rootScope:',$rootScope);
+});
 
-        todoList.remaining = function() {
-            var count = 0;
-            angular.forEach(todoList.todos, function(todo) {
-                count += todo.done ? 0 : 1;
-            });
-            return count;
-        };
+app.controller("myController", function ($scope, $rootScope) {
+    $scope.name = "Sujeet Srivastava";
+    $scope.welcome = "Welcome to " + $rootScope.site;
+});
 
-        todoList.archive = function() {
-            var oldTodos = todoList.todos;
-            todoList.todos = [];
-            angular.forEach(oldTodos, function(todo) {
-                if (!todo.done) todoList.todos.push(todo);
-            });
-        };
-    });
-
-
-
+app.controller("testController", function ($scope, $rootScope) {
+    $scope.welcome = "Welcome to " + $rootScope.site;
+});
 
 
 
