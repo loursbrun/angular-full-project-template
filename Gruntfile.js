@@ -71,7 +71,7 @@ module.exports = function (grunt) {
                 'dest': 'deploy/scripts/app.js'
             },
             'vendors': {
-                'src': ['bower_components/angular/angular.js'],
+                'src': ['bower_components/angular/angular.js', 'bower_components/angular-route/angular-route.js'],
                 'dest': 'deploy/scripts/vendors.js'
             }
         },
