@@ -18,8 +18,7 @@ module.exports = function (grunt) {
                 'bower_components/angular-mocks/angular-mocks.js',
                 'bower_components/restangular/dist/restangular.js',
                 'bower_components/underscore/underscore.js',
-                'bower_components/underscore/underscore.js',
-                'test/**/*Spec.js'
+                'bower_components/underscore/underscore.js'
             ]
         },
 
@@ -61,6 +60,12 @@ module.exports = function (grunt) {
             'deploy': {
                 'src': ['app/**/*.js'],
                 'dest': 'deploy/scripts/app.js'
+            }
+        },
+        'concat': {
+            'deploy': {
+                'src': ['bower_components/angular/angular.js'],
+                'dest': 'deploy/scripts/vendors.js'
             }
         },
 

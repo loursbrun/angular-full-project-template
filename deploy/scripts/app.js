@@ -1,19 +1,34 @@
-/**
- * Setup of main AngularJS application, with Restangular being defined as a dependency.
- *
- * @see controllers
- * @see services
- */
-var app = angular.module('ExampleApp',
-        [
-            'restangular',
-            'ExampleApp.controllers',
-            'ExampleApp.services'
-        ]
-    );
+angular.module('todoApp', [])
+    .controller('TodoListController', function() {
+        var todoList = this;
+        todoList.todos = [
+            {text:'learn angular', done:true},
+            {text:'build an angular app', done:false}];
 
-var controllers = angular.module('ExampleApp.controllers', [])
-    .controller('ExampleController', function ($scope, UserdataService) {
+        todoList.addTodo = function() {
+            todoList.todos.push({text:todoList.todoText, done:false});
+            todoList.todoText = '';
+        };
+
+        todoList.remaining = function() {
+            var count = 0;
+            angular.forEach(todoList.todos, function(todo) {
+                count += todo.done ? 0 : 1;
+            });
+            return count;
+        };
+
+        todoList.archive = function() {
+            var oldTodos = todoList.todos;
+            todoList.todos = [];
+            angular.forEach(oldTodos, function(todo) {
+                if (!todo.done) todoList.todos.push(todo);
+            });
+        };
+    });
+
+var controllers = angular.module('homeController.controllers', [])
+    .controller('homeController', function ($scope, UserdataService) {
 
         UserdataService.getFirstUsername().then(function(firstUsername) {
             $scope.firstUsername = firstUsername;
@@ -24,47 +39,6 @@ var controllers = angular.module('ExampleApp.controllers', [])
  * Created by fabienbrun on 10/05/16.
  */
 
-/**
- * Created by fabienbrun on 09/05/16.
- */
-/**
- * This is an example controller.
- * It triggers the UserdataService and puts the returned value on the scope
- *
- * @see services
- */
-var controllers = angular.module('ExampleApp.controllers', [])
-    .controller('ExampleController', function ($scope, UserdataService) {
-
-        UserdataService.getFirstUsername().then(function(firstUsername) {
-            $scope.firstUsername = firstUsername;
-        });
-
-    });
-/**
- * Created by fabienbrun on 09/05/16.
- */
-/**
- * Restangular-based data service, fetches user data from the backend
- *
- * @see https://github.com/mgonto/restangular
- */
-var services = angular.module('ExampleApp.services', [])
-    .factory('UserdataService', ['Restangular', '$q', function UserdataService(Restangular, $q) {
-        return {
-            /**
-             * @function getFirstUsername
-             * @returns a Promise that eventually resolves to the username of the first user
-             */
-            getFirstUsername: function() {
-                var firstUsernameDeferred = $q.defer();
-                var response = Restangular.one('users').getList().then(function(response) {
-                    firstUsernameDeferred.resolve(response[0].name);
-                });
-                return firstUsernameDeferred.promise;
-            }
-        };
-    }]);
 /**
  * Created by fabienbrun on 10/05/16.
  */

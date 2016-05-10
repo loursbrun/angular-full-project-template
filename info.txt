@@ -1,7 +1,7 @@
 lignes de commandes utiles :
 
 
-- grunt build => test + deploie
+- grunt deploy => test + deploie
 - grunt concat => concat
 - grunt uglify => uglify
 - grunt
