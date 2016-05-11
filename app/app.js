@@ -30,7 +30,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 
 
 
-
+/*
 app.controller('HomeController', ['$scope','$rootScope', function($scope, $rootScope) {
 
     //Setting the page properties
@@ -39,6 +39,10 @@ app.controller('HomeController', ['$scope','$rootScope', function($scope, $rootS
     };
 
 }]);
+*/
+
+
+
 
 
 app.controller('AboutController', ['$scope','$rootScope', function($scope, $rootScope) {

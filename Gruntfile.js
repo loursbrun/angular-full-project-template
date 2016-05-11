@@ -83,7 +83,16 @@ module.exports = function (grunt) {
 
         'concat': {
             'deploy': {
-                'src': ['app/**/*.js'],
+                //'src': ['app/**/*.js', 'app/templates/**/*.js'],
+
+
+                'src': [
+                    'app/**/*.js',
+                    'app/**/**/*.js.js'
+                ],
+
+
+
                 'dest': 'deploy/scripts/app.js'
             },
             'vendors': {
