@@ -22,40 +22,14 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             url:'/about',
             templateUrl: 'templates/about/about.html',
             controller: 'AboutController'
+        })
+        .state('contact', {
+            url:'/contact',
+            templateUrl: 'templates/contact/contact.html',
+            controller: 'ContactController'
         });
 
 }]);
-
-
-
-
-
-/*
-app.controller('HomeController', ['$scope','$rootScope', function($scope, $rootScope) {
-
-    //Setting the page properties
-    $rootScope.page = {
-        heading: 'Home'
-    };
-
-}]);
-*/
-
-
-
-
-
-app.controller('AboutController', ['$scope','$rootScope', function($scope, $rootScope) {
-
-    //Setting the page properties
-    $rootScope.page = {
-        heading: 'About'
-    };
-
-
-}]);
-
-
 
 
 
