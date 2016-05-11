@@ -15,12 +15,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     $stateProvider
         .state('home', {
             url:'/',
-            templateUrl: 'templates/home.html',
+            templateUrl: 'templates/home/home.html',
             controller: 'HomeController'
         })
         .state('about', {
             url:'/about',
-            templateUrl: 'templates/about.html',
+            templateUrl: 'templates/about/about.html',
             controller: 'AboutController'
         });
 

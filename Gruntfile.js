@@ -8,21 +8,16 @@ module.exports = function (grunt) {
 
 
 
-
-
     grunt.initConfig({
 
 
         copy: {
             main: {
                 files: [
-                    {expand: true, flatten: true, src: ['app/templates/**'], dest: 'deploy/templates/', filter: 'isFile'} // flattens results to a single level
+                    {expand: true, cwd: 'app/templates/', src: ['**'], dest: 'deploy/templates/'}, // makes all src relative to cwd
                 ]
             }
         },
-
-
-
 
 
         'pkg': grunt.file.readJSON('package.json'),
