@@ -7,7 +7,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
 
 
-
     grunt.initConfig({
 
 
@@ -16,6 +15,7 @@ module.exports = function (grunt) {
                 files: [
                     {expand: true, cwd: 'dev/templates/', src: ['**/*.html'], dest: 'deploy/templates/'}, // makes all src relative to cwd
                     {src: ['dev/index.html'], dest: 'deploy/index.html', filter: 'isFile'}, // includes files in path
+                    {src: ['dev/style.css'], dest: 'deploy/styles/style.css', filter: 'isFile'}, // includes files in path
                 ]
             }
         },

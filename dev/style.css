@@ -1,9 +1,11 @@
 body {
-    background-color: #cccccc;
-}
+  background-color: #cccccc; }
 
+.view-home {
+  background-color: green; }
 
-.done-true {
-    text-decoration: line-through;
-    color: grey;
-}
+.view-about {
+  background-color: blue; }
+
+.view-contact {
+  background-color: red; }
