@@ -16,3 +16,12 @@ gulp.task('css', function()
         .pipe(gulp.dest('dev/'));  // Sauvegarde le tout dans /src/style
 });
 
+
+gulp.task('watch', function()
+{
+    gulp.watch('dev/templates/**/*.scss', ['css']);
+});
+
+gulp.task('default', ['watch']);
+
+
