@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: 'app/templates/', src: ['**'], dest: 'deploy/templates/'}, // makes all src relative to cwd
+                    {expand: true, cwd: 'dev/templates/', src: ['**'], dest: 'deploy/templates/'}, // makes all src relative to cwd
                 ]
             }
         },
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
                 'options': {
                     'files': [
                         '<%= meta.jsFilesForTesting %>',
-                        'app/**/*.js'
+                        'dev/**/*.js'
                     ],
                 }
             },
@@ -78,17 +78,17 @@ module.exports = function (grunt) {
         },
 
         'jshint': {
-            'beforeconcat': ['app/**/*.js'],
+            'beforeconcat': ['dev/**/*.js'],
         },
 
         'concat': {
             'deploy': {
-                //'src': ['app/**/*.js', 'app/templates/**/*.js'],
+                //'src': ['dev/**/*.js', 'dev/templates/**/*.js'],
 
 
                 'src': [
-                    'app/**/*.js',
-                    'app/**/**/*.js.js'
+                    'dev/**/*.js',
+                    'dev/**/**/*.js.js'
                 ],
 
 

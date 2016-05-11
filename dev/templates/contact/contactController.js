@@ -1,6 +1,9 @@
 app.controller('ContactController', ['$scope','$rootScope', function($scope, $rootScope) {
 
-    //CECI EST UN TEST
+
+    console.log("About controller");
+
+    //Setting the page properties
     $rootScope.page = {
         heading: 'Contact'
     };
