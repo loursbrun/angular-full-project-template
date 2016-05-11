@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html id="data-ng-app" data-ng-app="demo">
 <head>
     <title>Template Project Angular</title>
     <meta charset="UTF-8">
@@ -7,32 +7,35 @@
     <script src="scripts/app.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/app.css">
 </head>
-<body>
-<div ng-controller="myController">
-    <h1>myController - rootScopeController</h1>
-    <p>rootScope: {{site}}</p>
-    <!--changes in site will be done on controller level(myController level) rootScope not global rootScope object-->
-    <p>rootScope(ng-model): <input type="text" ng-model="site"/></p>
-    <p>welcome from scope: {{welcome}}</p>
-    <p>welcome from scope(ng-model): <input type="text" ng-model="welcome"/></p>
-    <p>scope: {{name}}</p>
-</div>
 
-<div ng-controller="testController">
-    <h1>testController ScopeController</h1>
-    <p>rootScope: {{site}}</p>
-    <!--changes in site will be done on controller level(testController level) rootScope not global rootScope object-->
-    <p>rootScope(ng-model): <input type="text" ng-model="site"/></p>
-    <p>welcome from scope: {{welcome}}</p>
-    <p>name from rootScope: {{name}}</p>
-</div>
+<body id="index">
+<header>
 
-<div>
-    <h1>No Controller - Outside from both Controller</h1>
-    <p>name from rootScope: {{name}}</p>
-    <p>site from rootScope: {{site}}</p>
-</div>
+    <nav>
+        <ul>
+            <li ui-sref-active="active">
+                <a ui-sref="home">Home</a></li>
+            <li ui-sref-active="active">
+                <a ui-sref="about">About</a>
+            </li>
+        </ul>
+    </nav>
+    <h1><a ui-sref=".">{{page.heading}}</a></h1>
+</header>
+
+<!-- Angular UI Router Directive for template insertion -->
+<div id="content" ui-view></div>
+
+
+
+
 
 </body>
 
 </html>
+
+
+
+
+
+
