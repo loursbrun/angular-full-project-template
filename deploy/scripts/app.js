@@ -38,8 +38,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 
 app.controller('AboutController', ['$scope','$rootScope', function($scope, $rootScope) {
 
-
-    console.log("About controller");
+    //console.log("About controller");
 
     //Setting the page properties
     $rootScope.page = {
@@ -50,9 +49,8 @@ app.controller('AboutController', ['$scope','$rootScope', function($scope, $root
 }]);
 
 app.controller('ContactController', ['$scope','$rootScope', function($scope, $rootScope) {
-
-
-    console.log("About controller");
+    
+    //console.log("About controller");
 
     //Setting the page properties
     $rootScope.page = {
@@ -62,7 +60,7 @@ app.controller('ContactController', ['$scope','$rootScope', function($scope, $ro
 }]);
 app.controller('HomeController', ['$scope','$rootScope', function($scope, $rootScope) {
 
-    console.log("Home controller");
+    //console.log("Home controller");
 
 
     //Setting the page properties
