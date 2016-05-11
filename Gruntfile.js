@@ -15,9 +15,11 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     {expand: true, cwd: 'dev/templates/', src: ['**'], dest: 'deploy/templates/'}, // makes all src relative to cwd
+                    {src: ['dev/index.html'], dest: 'deploy/index.html', filter: 'isFile'}, // includes files in path
                 ]
             }
         },
+
 
 
         'pkg': grunt.file.readJSON('package.json'),
