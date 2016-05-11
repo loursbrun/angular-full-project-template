@@ -17,10 +17,22 @@ gulp.task('css', function()
 });
 
 
+
+
 gulp.task('watch', function()
 {
-    gulp.watch('dev/templates/**/*.scss', ['css']);
+    gulp.watch('dev/templates/home/*.scss', ['css']);
+    gulp.watch('dev/style.css', ['copy-folder']);
 });
+
+
+gulp.task('copy-folder', function() {
+    gulp.src('dev/style.css')
+        .pipe(gulp.dest('deploy/styles/'));
+});
+
+
+
 
 gulp.task('default', ['watch']);
 
