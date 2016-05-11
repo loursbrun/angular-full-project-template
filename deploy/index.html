@@ -9,7 +9,7 @@
 </head>
 <body>
 <div ng-controller="myController">
-    <h1>rootScopeController</h1>
+    <h1>myController - rootScopeController</h1>
     <p>rootScope: {{site}}</p>
     <!--changes in site will be done on controller level(myController level) rootScope not global rootScope object-->
     <p>rootScope(ng-model): <input type="text" ng-model="site"/></p>
@@ -19,7 +19,7 @@
 </div>
 
 <div ng-controller="testController">
-    <h1>ScopeController</h1>
+    <h1>testController ScopeController</h1>
     <p>rootScope: {{site}}</p>
     <!--changes in site will be done on controller level(testController level) rootScope not global rootScope object-->
     <p>rootScope(ng-model): <input type="text" ng-model="site"/></p>
@@ -28,7 +28,7 @@
 </div>
 
 <div>
-    <h1>Outside from both Controller</h1>
+    <h1>No Controller - Outside from both Controller</h1>
     <p>name from rootScope: {{name}}</p>
     <p>site from rootScope: {{site}}</p>
 </div>
