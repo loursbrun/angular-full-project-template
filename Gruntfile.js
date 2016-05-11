@@ -14,6 +14,7 @@ module.exports = function (grunt) {
                 'bower_components/jquery/jquery.js',
                 'bower_components/angular/angular.js',
                 'bower_components/angular-route/angular-route.js',
+                'bower_components/angular-ui-router/release/angular-ui-router.js',
                 'bower_components/angular-sanitize/angular-sanitize.js',
                 'bower_components/angular-mocks/angular-mocks.js',
                 'bower_components/restangular/dist/restangular.js',
@@ -73,7 +74,8 @@ module.exports = function (grunt) {
             'vendors': {
                 'src': [
                     'bower_components/angular/angular.js',
-                    'bower_components/angular-route/angular-route.js'
+                    'bower_components/angular-route/angular-route.js',
+                    'bower_components/angular-ui-router/release/angular-ui-router.js'
                 ],
                 'dest': 'deploy/scripts/vendors.js'
             }

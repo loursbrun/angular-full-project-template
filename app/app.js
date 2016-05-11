@@ -1,6 +1,6 @@
 
 //defining module
-var app = angular.module('app', []);
+var app = angular.module('app', ['ui.router']);
 
 
 
