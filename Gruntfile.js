@@ -1,12 +1,30 @@
-
 module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+
+
+
+
 
     grunt.initConfig({
+
+
+        copy: {
+            main: {
+                files: [
+                    {expand: true, flatten: true, src: ['app/templates/**'], dest: 'deploy/templates/', filter: 'isFile'} // flattens results to a single level
+                ]
+            }
+        },
+
+
+
+
+
         'pkg': grunt.file.readJSON('package.json'),
 
         'meta': {
@@ -22,6 +40,8 @@ module.exports = function (grunt) {
                 'bower_components/underscore/underscore.js'
             ]
         },
+
+
 
         'karma': {
             'development': {
@@ -92,6 +112,7 @@ module.exports = function (grunt) {
             }
         },
 
+
     });
 
     grunt.registerTask('test', ['karma:development']);
@@ -102,6 +123,7 @@ module.exports = function (grunt) {
             'concat',
             //'karma:deploy',
             //'uglify',
+            'copy',
             //'karma:minified'
         ]);
 
