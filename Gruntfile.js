@@ -101,7 +101,8 @@ module.exports = function (grunt) {
                 'src': [
                     'bower_components/angular/angular.js',
                     'bower_components/angular-route/angular-route.js',
-                    'bower_components/angular-ui-router/release/angular-ui-router.js'
+                    'bower_components/angular-ui-router/release/angular-ui-router.js',
+                    'bower_components/greensock/src/minified/TweenMax.min.js'
                 ],
                 'dest': 'deploy/scripts/vendors.js'
             }
