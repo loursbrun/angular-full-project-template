@@ -104,6 +104,7 @@ module.exports = function (grunt) {
                     'bower_components/greensock/src/minified/TweenMax.min.js',
                     "bower_components/angular-bootstrap/ui-bootstrap.min.js",
                     "bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+                    "bower_components/angular-animate/angular-animate.js",
 
                 ],
                 'dest': 'deploy/scripts/vendors.js'
