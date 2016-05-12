@@ -1,0 +1,14 @@
+{
+    "author": "fabien",
+    "name": "template",
+    "version": "0.0.0",
+    "ignore": [
+    ],
+    "dependencies": {
+        "greensock": "1.13.2",
+        "three.js": "0.73.0",
+        "angular": "~1.4.9",
+        "angular-ui-router": "~0.2.15"
+    },
+    "devDependencies": {}
+}
