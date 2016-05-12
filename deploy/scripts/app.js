@@ -1,7 +1,7 @@
 
 //defining module
 
-var app = angular.module('demo', ['ui.router']);
+var app = angular.module('app', ['ui.router','ui.bootstrap']);
 
 //the run function acts as a main method for the angular app.
 app.run(function ($rootScope) {
